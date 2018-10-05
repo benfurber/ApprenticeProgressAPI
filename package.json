@@ -3,5 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Ben Furber <ben@fu.rber.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "graphql": "^14.0.2"
+  }
 }
