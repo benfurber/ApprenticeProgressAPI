@@ -1,0 +1,7 @@
+{
+  "name": "ApprenticeProgressAPI",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben Furber <ben@fu.rber.io>",
+  "license": "MIT"
+}
