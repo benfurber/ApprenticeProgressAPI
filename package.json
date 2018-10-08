@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Ben Furber <ben@fu.rber.io>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "apollo-server": "^2.1.0",
     "graphql": "^14.0.2"
