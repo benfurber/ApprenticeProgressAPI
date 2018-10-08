@@ -168,7 +168,7 @@ const typeDefs = gql`
     actions: [String]
     description: String
     evidence: [String]
-    score: Int
+    score: Float
     tag: String
     title: String
   }
