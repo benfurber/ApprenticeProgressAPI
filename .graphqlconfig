@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "ApprenticeProgressAPI": {
+      "schemaPath": "schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "prod": "https://apprentice-progress-api.herokuapp.com/"
+        }
+      }
+    }
+  }
+}
