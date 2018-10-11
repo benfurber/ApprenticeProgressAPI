@@ -4,7 +4,10 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: "eslint:recommended",
+  extends: [
+    "eslint:recommended",
+    "plugin:jest/recommended",
+  ],
   parserOptions: {
     ecmaVersion: 2016,
     sourceType: "module"
@@ -14,14 +17,10 @@ module.exports = {
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
-    "graphql/template-strings": ['error', {
-      env: 'apollo',
-      schemaJson: require('./schema.json'),
+    "no-console": "off",
   },
   plugins: [
-    'graphql'
+    "graphql",
+    "jest",
   ],
-  globals: [
-    "console": false
-  ]
 };

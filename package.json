@@ -5,14 +5,18 @@
   "author": "Ben Furber <ben@fu.rber.io>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "eslint . && jest"
   },
   "dependencies": {
     "apollo-server": "^2.1.0",
     "graphql": "^14.0.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.6.1",
-    "eslint-plugin-graphql": "^2.1.1"
+    "eslint-plugin-graphql": "^2.1.1",
+    "eslint-plugin-jest": "^21.24.1",
+    "jest": "^23.6.0"
   }
 }
