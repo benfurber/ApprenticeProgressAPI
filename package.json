@@ -5,7 +5,8 @@
   "author": "Ben Furber <ben@fu.rber.io>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "eslint . && jest"
   },
   "dependencies": {
     "apollo-server": "^2.1.0",
