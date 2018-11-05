@@ -9,5 +9,12 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :goal, GoalType, null: true do
+      description "Goals data"
+    end
+    def goal
+      Goal.first
+    end
   end
 end
