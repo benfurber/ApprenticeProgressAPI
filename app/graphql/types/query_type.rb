@@ -10,11 +10,11 @@ module Types
       "Hello World!"
     end
 
-    field :goal, GoalType, null: true do
+    field :goals, [GoalType], null: true do
       description "Goals data"
     end
-    def goal
-      Goal.first
+    def goals
+      Goal.all
     end
   end
 end
