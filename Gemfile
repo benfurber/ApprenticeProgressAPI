@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'graphql'
 gem 'graphiql-rails', group: :development
+gem 'rspec'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
