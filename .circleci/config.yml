@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: circleci-ApprenticeProgressAPI
+          RAILS_ENV: test
+          SECRET_KEY_BASE: 1352gkf574g7746c1ccae1ad593ba41cf1930908e4f7f490b4e9eed0aewrsgfdhgfnhmnbmb3d9ced44d0f82431ccfhdshndfhrtr
+      - image: circleci/postgres:10.5-alpine
+        environment:
+          POSTGRES_USER: circleci-ApprenticeProgressAPI
+          POSTGRES_DB: ApprenticeProgressAPI_test
+          POSTGRES_PASSWORD: ""
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      # Database setup
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run: bin/rails db:schema:load --trace
+
+      # Run rspec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+            --out test_results/rspec.xml \
+            --format progress \
+            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
