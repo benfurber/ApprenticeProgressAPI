@@ -8,10 +8,11 @@ jobs:
           PG_USER: ApprenticeProgressAPI
           RAILS_ENV: test
           RACK_ENV: test
-      - image: circleci/postgres:10.5
+      - image: circleci/postgres:10.5-alpine-postgis-ram
         environment:
           POSTGRES_USER: ApprenticeProgressAPI
           POSTGRES_DB: ApprenticeProgressAPI_test
+          POSTGRES_PASSWORD: ""
 
     working_directory: ~/repo
 
