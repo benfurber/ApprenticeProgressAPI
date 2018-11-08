@@ -22,7 +22,7 @@ module SeedData
       description: "I can support my own learning.",
       evidence: [
         "Completed a 5 point story with only gentle support.",
-        "Having had issues with Jest setup, was able to fix client test suite."
+        "Having had issues with Jest setup, was able to fix client test suite.",
       ],
       score: 4,
       tag: "Team thoughtbot",
@@ -65,8 +65,11 @@ module SeedData
     {
       id: 6,
       actions: [],
-      description: "Self management requires that you can motivate yourself to do better.",
-      evidence: ["Have focused on toy when project direction didn't support learning"],
+      description:
+        "Self management requires that you can motivate yourself to do better.",
+      evidence: [
+        "Have focused on toy when project direction didn't support learning",
+      ],
       score: 5,
       tag: "Team thoughtbot",
       title: "I set my own direction",
@@ -74,11 +77,12 @@ module SeedData
     {
       id: 7,
       actions: ["Build a more mature redux setup"],
-      description: "Code is object orientated, easy to read/understand and easy to change.",
+      description: "Code is object orientated, easy to read/understand and
+       easy to change.",
       evidence: [
         "Can explain difference and value of different types of components.",
         "Came up with the idea of the internal link component",
-        "Have build a basic redux flow"
+        "Have build a basic redux flow",
       ],
       score: 3,
       tag: "I'm a developer",
@@ -94,7 +98,8 @@ module SeedData
       evidence: [
         "Over initial hurdle of basics",
         "Appreciate the limits of snapshot tests",
-        "When to refactor out component functionality to pure javascript to aid testing",
+        "When to refactor out component functionality to pure javascript to " +
+          "aid testing",
       ],
       score: 3,
       tag: "I'm a developer",
@@ -163,7 +168,8 @@ module SeedData
       evidence: ["Could give boilerplate thoughtbot explanation"],
       score: 2,
       tag: "I'm a consultant",
-      title: "I can clearly explain to others where/when thoughtbot can add value",
+      title: "I can clearly explain to others where/when thoughtbot can " +
+        "add value",
     },
     {
       id: 15,
@@ -186,5 +192,5 @@ module SeedData
       tag: "I'm a consultant",
       title: "My teams build software clients’ love",
     },
-  ]
+  ].freeze
 end
