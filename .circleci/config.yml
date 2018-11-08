@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
         environment:
-          PG_HOST: 127.0.0.1
-          PG_USER: circleci-ApprenticeProgressAPI
+          PGHOST: 127.0.0.1
+          PGUSER: circleci-ApprenticeProgressAPI
           RAILS_ENV: test
           SECRET_KEY_BASE: 1352gkf574g7746c1ccae1ad593ba41cf1930908e4f7f490b4e9eed0aewrsgfdhgfnhmnbmb3d9ced44d0f82431ccfhdshndfhrtr
       - image: circleci/postgres:10.5-alpine
