@@ -6,10 +6,9 @@ jobs:
         environment:
           PG_HOST: 127.0.0.1
           PG_USER: ApprenticeProgressAPI
-          RAILS_ENV: development bin/setup
-          RACK_ENV: test
+          RAILS_ENV: test
           SECRET_KEY_BASE: 1352gkf574g7746c1ccae1ad593ba41cf1930908e4f7f490b4e9eed0aewrsgfdhgfnhmnbmb3d9ced44d0f82431ccfhdshndfhrtr
-      - image: circleci/postgres:10.5-alpine-postgis-ram
+      - image: circleci/postgres:10.5-alpine
         environment:
           POSTGRES_USER: ApprenticeProgressAPI
           POSTGRES_DB: ApprenticeProgressAPI_test
@@ -42,9 +41,7 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
 
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
-      - run: bundle exex rake db:seed
+      - run: bin/rails db:schema:load --trace
 
       # run tests!
       - run:
