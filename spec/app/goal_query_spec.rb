@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Goals query', type: :graphql do
-  it 'can execute a goals query' do
+describe "Goals query", type: :graphql do
+  it "can execute a goals query" do
     goal = create(:goal)
     query = <<~QUERY
       {
@@ -28,9 +28,9 @@ describe 'Goals query', type: :graphql do
           id: goal.id.to_s,
           score: goal.score,
           tag: goal.tag,
-          title: goal.title
-        }
-      ]
+          title: goal.title,
+        },
+      ],
     }
 
     expect(result[:data]).to eq(expected)
