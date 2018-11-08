@@ -6,7 +6,7 @@ jobs:
         environment:
           PG_HOST: 127.0.0.1
           PG_USER: ApprenticeProgressAPI
-          RAILS_ENV: test
+          RAILS_ENV: development bin/setup
           RACK_ENV: test
       - image: circleci/postgres:10.5-alpine-postgis-ram
         environment:
