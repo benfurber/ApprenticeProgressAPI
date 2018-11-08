@@ -1,0 +1,18 @@
+development: &default
+  adapter: postgresql
+  database: ApprenticeProgressAPI_development
+  encoding: utf8
+  host: localhost
+  min_messages: warning
+  pool: <%= ENV["DB_POOL"] || ENV["RAILS_MAX_THREADS"] || 5 %>
+  timeout: 5000
+
+test:
+  <<: *default
+  database: ApprenticeProgressAPI_test
+
+production:
+  <<: *default
+  database: ApprenticeProgressAPI_production
+  username: ApprenticeProgressAPI
+  password: <%= ENV['APPRENTICEPROGRESSAPI_DATABASE_PASSWORD'] %>
