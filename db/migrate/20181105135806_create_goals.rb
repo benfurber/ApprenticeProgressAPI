@@ -8,6 +8,8 @@ class CreateGoals < ActiveRecord::Migration[5.2]
       t.string :tag
       t.string :title
 
+      t.belongs_to :user, index: true
+
       t.timestamps
     end
   end

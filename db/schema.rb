@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2018_11_12_100541) do
     t.float "score"
     t.string "tag"
     t.string "title"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
