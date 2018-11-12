@@ -15,6 +15,7 @@ gem "jbuilder", "~> 2.5"
 gem "turbolinks", "~> 5"
 
 gem "devise"
+gem "dotenv-rails"
 gem "graphql"
 
 group :development, :test do
