@@ -12,9 +12,7 @@ module Mutations
       user = User.new(email: email, password: password)
       if user.save
         {
-          user: {
-            email: user.email,
-          },
+          user: user,
           errors: [],
         }
       else
