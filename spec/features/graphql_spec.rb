@@ -41,7 +41,8 @@ describe "graphql", type: :feature do
       }
     QUERY
 
-    results = ApprenticeProgressAPISchema.execute(get_goals_query).to_h.deep_symbolize_keys
+    raw_results = ApprenticeProgressAPISchema.execute(get_goals_query)
+    results = raw_results.to_h.deep_symbolize_keys
 
     expected = {
       goals: [

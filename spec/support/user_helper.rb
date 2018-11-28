@@ -3,7 +3,7 @@ module UserHelpers
     user = build(:user)
     user.password = "verySECURE1234"
     user.save
-    
+
     User.last
   end
 end
