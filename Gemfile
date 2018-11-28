@@ -14,6 +14,9 @@ gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.5"
 gem "turbolinks", "~> 5"
 
+gem "devise"
+gem "devise-token_authenticatable"
+gem "dotenv-rails"
 gem "graphql"
 
 group :development, :test do

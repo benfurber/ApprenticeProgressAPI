@@ -6,5 +6,12 @@ module Types
     def goals
       Goal.all
     end
+
+    field :users, [UserType], null: true do
+      description "Users"
+    end
+    def users
+      User.all
+    end
   end
 end

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Goals query", type: :graphql do
   it "can execute a goals query" do
-    goal = create(:goal)
+    goal = create(:goal, user: create_user)
     query = <<~QUERY
       {
         goals {
